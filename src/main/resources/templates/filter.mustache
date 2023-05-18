@@ -1,0 +1,45 @@
+<html>
+<body>
+<div>
+    <i>Search by part number:</i>
+    <form method="post">
+        <input type="text" name="partNumber" placeholder="Part number"/>
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div>
+    <form>
+        <button type="submit" name="back_to_menu">Menu</button>
+    </form>
+</div>
+{{#parts}}
+    <div>
+        <table border="2px">
+            <tr>
+                <td title="id">
+                    <b>{{id}}</b>
+                </td>
+                <td title="name">
+                    <span>{{name}}</span>
+                </td>
+                <td title="part number">
+                    <span>{{partNumber}}</span>
+                </td>
+                <td title="manufacturer">
+                    <span>{{manufacturer}}</span>
+                </td>
+                <td title="for model">
+                    <span>{{forModel}}</span>
+                </td>
+                <td title="purchase price">
+                    <span>{{purchasePrice}}</span>
+                </td>
+                <td title="sale price">
+                    <span>{{salePrice}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+{{/parts}}
+</body>
+</html>

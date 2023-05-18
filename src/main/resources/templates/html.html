@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<body>
+<div>
+  <form action="#" th:action="@{/bitch}" th:object="part" method="post">
+    <label for="name">Part name:</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <label for="partNumber">Part number:</label>
+    <input type="text" th:field="*{partNumber}" id="partNumber"/>
+    <label for="manufacturer">Manufacturer:</label>
+    <input type="text" th:field="*{manufacturer}" id="manufacturer"/>
+    <label for="forModel">Model:</label>
+    <input type="text" th:field="*{forModel}" id="forModel"/>
+    <label for="purchasePrice">Purchase price:</label>
+    <input type="number" th:field="*{purchasePrice}" id="purchasePrice"/>
+    <label for="salePrice">Sale price:</label>
+    <input type="number" th:field="*{salePrice}" id="salePrice"/>
+    <button type="submit">Enter</button>
+  </form>
+</div>
+{{#parts}}
+<div>
+  <b>{{id}}</b>
+  <span>{{name}}</span>
+  <span>{{partNumber}}</span>
+  <span>{{manufacturer}}</span>
+  <span>{{forModel}}</span>
+  <span>{{purchasePrice}}</span>
+  <span>{{salePrice}}</span>
+</div>
+{{/parts}}
+</body>
+</html>
