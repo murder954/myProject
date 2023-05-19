@@ -1,8 +1,50 @@
 <html>
+<head>
+    <style>
+        html {
+            background-color: cyan;
+        }
+
+        i {
+            color: blueviolet;
+            font-size: 40px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        button {
+            background-color: darkblue;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        table {
+            border: 3px solid gold;
+
+        }
+
+        td {
+            background-color: aliceblue;
+        }
+
+        th {
+            color: white;
+            background-color: darkblue;
+        }
+    </style>
+</head>
 <body>
 <div>
     <i>Search by part number:</i>
     <form method="post">
+        <label for="partNumber">Enter part number:</label>
         <input type="text" name="partNumber" placeholder="Part number"/>
         <button type="submit">Search</button>
     </form>
@@ -12,34 +54,47 @@
         <button type="submit" name="back_to_menu">Menu</button>
     </form>
 </div>
-{{#parts}}
     <div>
         <table border="2px">
+            <thead>
             <tr>
-                <td title="id">
+                <th width="50px">Id</th>
+                <th width="100px">Name</th>
+                <th width="100px">Part Number</th>
+                <th width="100px">Manufacturer</th>
+                <th width="120px">Model</th>
+                <th width="50px">Purchase price</th>
+                <th width="50px">Sale price</th>
+            </tr>
+            </thead>
+            <tbody>
+{{#parts}}
+            <tr>
+                <td title="id" width="50px">
                     <b>{{id}}</b>
                 </td>
-                <td title="name">
+                <td title="name" width="100px">
                     <span>{{name}}</span>
                 </td>
-                <td title="part number">
+                <td title="part number" width="100px">
                     <span>{{partNumber}}</span>
                 </td>
-                <td title="manufacturer">
+                <td title="manufacturer" width="100px">
                     <span>{{manufacturer}}</span>
                 </td>
-                <td title="for model">
+                <td title="for model" width="120px">
                     <span>{{forModel}}</span>
                 </td>
-                <td title="purchase price">
+                <td title="purchase price" width="50px">
                     <span>{{purchasePrice}}</span>
                 </td>
-                <td title="sale price">
+                <td title="sale price" width="50px">
                     <span>{{salePrice}}</span>
                 </td>
             </tr>
+{{/parts}}
+            </tbody>
         </table>
     </div>
-{{/parts}}
 </body>
 </html>
